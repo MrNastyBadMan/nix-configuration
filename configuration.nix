@@ -50,7 +50,7 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-  }
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   #services.displayManager.sddm.enable = true;
