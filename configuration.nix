@@ -46,15 +46,19 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  }
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable Hyprland Desktop Environment
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  #programs.hyprland.enable = true;
+  #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure keymap in X11
   services.xserver.xkb = {
