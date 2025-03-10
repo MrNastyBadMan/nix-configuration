@@ -10,3 +10,5 @@ sudo nh os switch . -H default
 - `nh` - nix helper, installed program
 - `os` - NixOS functionality (write instead of nix basically)
 - `-H default` - specifying the host
+
+nh home switch .
