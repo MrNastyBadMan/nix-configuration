@@ -1,10 +1,27 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+  let
+    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+      ${pkgs.swww}/bin/swww init &
+      sleep 1
+      ${pkgs.swww}/bin/swww img ./wallpaper2.jp} &
+    '';
+  in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "wrc";
   home.homeDirectory = "/home/wrc";
+
+  
+    wayland.windowManager.hyprland = {
+      enable = true;
+
+      settings = {
+        exec-once = ''${startupScript}/bin/start'';
+      };
+    };
+ 
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -23,6 +40,7 @@
     pkgs.hello
     pkgs.fastfetch
     pkgs.kitty
+    pkgs.swww
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -37,6 +55,13 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  #programs.kitty = lib.mkForce  {
+  #  enable = true;
+  #  settings = {
+  #    selection_background = "#ffffff";
+  #  };
+  #};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
