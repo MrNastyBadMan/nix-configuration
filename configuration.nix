@@ -126,6 +126,8 @@
     fprintd
     crispy-doom
     nh
+    libreoffice
+    fprintd
   ];
 
 

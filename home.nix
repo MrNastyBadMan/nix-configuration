@@ -56,11 +56,12 @@
     # '')
   ];
 
+  programs.kitty.enable = true;
   #programs.kitty = lib.mkForce  {
-  #  enable = true;
-  #  settings = {
-  #    selection_background = "#ffffff";
-  #  };
+    #enable = true;
+    #settings = {
+    #  background_opacity = 0.5;
+    #};
   #};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
