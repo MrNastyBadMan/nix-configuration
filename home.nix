@@ -19,6 +19,11 @@
 
       settings = {
         exec-once = ''${startupScript}/bin/start'';
+        "$terminal" = "kitty";
+        "$mod" = "SUPER";
+        bind = [
+          "$mod, Q, exec, $terminal"
+        ];
       };
     };
  
