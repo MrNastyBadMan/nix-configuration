@@ -2,9 +2,10 @@
 
   let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      ${pkgs.swww}/bin/swww init &
+      #${pkgs.swww}/bin/swww clear-cache &
+      ${pkgs.swww}/bin/swww-daemon &
       sleep 1
-      ${pkgs.swww}/bin/swww img ./wallpaper2.jp} &
+      ${pkgs.swww}/bin/swww img ./wallpaper2.jp &
     '';
   in
 {
@@ -19,10 +20,24 @@
 
       settings = {
         exec-once = ''${startupScript}/bin/start'';
+
+        "monitor" = ",preferred,auto,auto";
         "$terminal" = "kitty";
         "$mod" = "SUPER";
+
+        # environment variables
+        #"env" = "XCURSOR_SIZE,24";
+        #"env" = "HYPRCURSOR_SIZE,24";
+
+        misc = {
+          "force_default_wallpaper" = "0";
+          "disable_hyprland_logo" = "true";
+
+        };
+
         bind = [
           "$mod, Q, exec, $terminal"
+          "$mod, M, exit"
         ];
       };
     };
