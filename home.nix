@@ -23,7 +23,6 @@
 
         "monitor" = ",preferred,auto,auto";
         "$terminal" = "kitty";
-        "$mod" = "SUPER";
 
         # environment variables
         env = [
@@ -107,14 +106,44 @@
           "preserve_split" = "true";
         };
 
+        master = {
+          "new_status" = "master";
+        };
+
         misc = {
           "force_default_wallpaper" = "0";
           "disable_hyprland_logo" = "true";
         };
 
+        input = {
+          kb_layout = "gb";
+
+          follow_mouse = "1";
+
+          sensitivity = "0";
+
+          touchpad = {
+            natural_scroll = "false";
+          };
+        };
+
+        "$mainMod" = "SUPER";
+
         bind = [
-          "$mod, Q, exec, $terminal"
-          "$mod, M, exit"
+          "$mainMod, Q, exec, $terminal"
+          "$mainMod, C, killactive"
+          "$mainMod, M, exit"
+          # ADD FILE MANAGER
+          "$mainMod, V, togglefloating"
+          # ADD MENU THING
+          "$mainMod, P, pseudo"
+          "$mainMod, J, togglesplit"
+
+          # Move focus with mainMod + arrow keys
+          "$mainMod, left, movefocus, l"
+          "$mainMod, right, movefocus, r"
+          "$mainMod, up, movefocus, u"
+          "$mainMod, down, movefocus, d"
         ];
       };
     };
