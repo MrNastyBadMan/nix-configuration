@@ -6,7 +6,7 @@ sudo nixos-rebuild switch --flake .#default
 - `.` - this folder
 - `#default` - name of configuration specified in flake file
 
-sudo nh os switch . -H default
+nh os switch . -H default
 - `nh` - nix helper, installed program
 - `os` - NixOS functionality (write instead of nix basically)
 - `-H default` - specifying the host
