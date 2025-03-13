@@ -173,7 +173,9 @@
           "$mainMod, S, togglespecialworkspace, magic"
           "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-
+          # Scroll through existing workspaces with mainMod + scroll
+          "$mainMod, mouse_down, workspace, e+1"
+          "$mainMod, mouse_up, workspace, e-1"
         ];
       };
     };
