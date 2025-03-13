@@ -129,6 +129,7 @@
 
         "$mainMod" = "SUPER";
 
+        # Keybinds/shortcuts
         bind = [
           "$mainMod, Q, exec, $terminal"
           "$mainMod, C, killactive"
@@ -177,6 +178,27 @@
           "$mainMod, mouse_down, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
         ];
+
+        # Keybinds/shortcuts with mouse_down
+        bindm = [
+          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:273, resizewindow"
+        ];
+
+        # Laptop multimedia keys
+        bindel = [
+          ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+          ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+          ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+        ];
+
+        windowrulev2 = [
+          "suppressevent maximize, class:.*"
+          "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        ];
       };
     };
  
@@ -214,13 +236,13 @@
     # '')
   ];
 
-  programs.kitty.enable = true;
-  #programs.kitty = lib.mkForce  {
-    #enable = true;
-    #settings = {
-    #  background_opacity = 0.5;
-    #};
-  #};
+  #programs.kitty.enable = true;
+  programs.kitty = {
+    enable = true;
+    settings = {
+      background_opacity = 0.75;
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
