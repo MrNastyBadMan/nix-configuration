@@ -21,7 +21,7 @@
       settings = {
         exec-once = ''${startupScript}/bin/start'';
 
-        "monitor" = ",preferred,auto,auto";
+        "monitor" = ",preferred,auto,1.566667";
         "$terminal" = "kitty";
 
         # environment variables
@@ -36,7 +36,7 @@
 
           "border_size" = "2";
 
-          "col.active_border" = "rgba(339933ee) rgba(336600ee) 45deg";
+          "col.active_border" = "rgba(33cc33ee) rgba(336600ee) 45deg";
           "col.inactive_border" = "rgba(595959aa)";
 
           "resize_on_border" = "false";
