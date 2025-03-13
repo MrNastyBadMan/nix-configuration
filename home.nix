@@ -71,7 +71,7 @@
         };
 
         animations = {
-          "enabled" = "yes";
+          "enabled" = "true";
 
           bezier = [
             "easeOutQuint,0.23,1,0.32,1"
@@ -168,6 +168,12 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
+
+          # Example special workspace (scratchpad)
+          "$mainMod, S, togglespecialworkspace, magic"
+          "$mainMod SHIFT, S, movetoworkspace, special:magic"
+
+
         ];
       };
     };
