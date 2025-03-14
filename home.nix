@@ -138,6 +138,7 @@
           # ADD MENU THING
           "$mainMod, P, pseudo"
           "$mainMod, J, togglesplit"
+          "$mainMod, R, exec, rofi, -show drun, -show-icons"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, left, movefocus, l"
