@@ -129,6 +129,7 @@
     nh
     libreoffice
     fprintd
+    dolphin
   ];
 
   # Enable fprintd for fingerprint scanner

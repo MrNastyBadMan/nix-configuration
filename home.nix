@@ -122,6 +122,7 @@
 
           touchpad = {
             natural_scroll = "true";
+            "tap-and-drag" = "false";
           };
         };
 
@@ -219,6 +220,8 @@
     pkgs.fastfetch
     pkgs.kitty
     pkgs.swww
+    pkgs.waybar
+    pkgs.rofi-wayland
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
