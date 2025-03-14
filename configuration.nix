@@ -129,7 +129,7 @@
     nh
     libreoffice
     fprintd
-    dolphin
+    nemo
   ];
 
   # Enable fprintd for fingerprint scanner
