@@ -2,10 +2,13 @@
 
   let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      #${pkgs.swww}/bin/swww clear-cache &
       ${pkgs.swww}/bin/swww-daemon &
       sleep 1
       ${pkgs.swww}/bin/swww img ./wallpaper2.jp &
+
+      ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
+      ${pkgs.waybar}/bin/waybar &
+      ${pkgs.dunst}/bin/dunst
     '';
   in
 {
@@ -138,7 +141,7 @@
           # ADD MENU THING
           "$mainMod, P, pseudo"
           "$mainMod, J, togglesplit"
-          "$mainMod, R, exec, rofi, -show drun, -show-icons"
+          "$mainMod, R, exec, rofi -show drun -show-icons"
 
           # Move focus with mainMod + arrow keys
           "$mainMod, left, movefocus, l"
@@ -223,6 +226,9 @@
     pkgs.swww
     pkgs.waybar
     pkgs.rofi-wayland
+    pkgs.dunst
+    pkgs.libnotify
+    pkgs.networkmanagerapplet
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -132,6 +132,10 @@
     nemo
   ];
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+  ];
+
   # Enable fprintd for fingerprint scanner
   services.fprintd.enable = true;
 
