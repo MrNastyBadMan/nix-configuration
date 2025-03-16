@@ -134,6 +134,7 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
+    font-awesome
   ];
 
   # Enable fprintd for fingerprint scanner

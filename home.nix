@@ -24,7 +24,7 @@
       settings = {
         exec-once = ''${startupScript}/bin/start'';
 
-        "monitor" = ",preferred,auto,1.566667";
+        "monitor" = ",preferred,auto,1";
         "$terminal" = "kitty";
 
         # environment variables
@@ -229,6 +229,7 @@
     pkgs.dunst
     pkgs.libnotify
     pkgs.networkmanagerapplet
+    pkgs.brightnessctl
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
