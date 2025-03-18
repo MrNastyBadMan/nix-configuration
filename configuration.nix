@@ -124,6 +124,7 @@
     rustup
     jdk
     python3
+    sqlite
     fprintd
     crispy-doom
     nh
@@ -134,7 +135,12 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
+
+    # For waybar n stuff
+    nerd-fonts.hack
     font-awesome
+    nerd-fonts.jetbrains-mono
+    jetbrains-mono
   ];
 
   # Enable fprintd for fingerprint scanner
