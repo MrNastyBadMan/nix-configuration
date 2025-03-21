@@ -134,6 +134,7 @@
     filezilla
     # Temp for project
     dbeaver-bin
+    processing
   ];
 
   fonts.packages = with pkgs; [
