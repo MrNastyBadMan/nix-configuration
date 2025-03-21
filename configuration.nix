@@ -131,6 +131,9 @@
     libreoffice
     fprintd
     nemo
+    filezilla
+    # Temp for project
+    dbeaver-bin
   ];
 
   fonts.packages = with pkgs; [
