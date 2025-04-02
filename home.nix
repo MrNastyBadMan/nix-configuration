@@ -24,7 +24,10 @@
       settings = {
         exec-once = ''${startupScript}/bin/start'';
 
-        "monitor" = ",preferred,auto,1";
+        monitor = [
+          "eDP-1,preferred,auto,1"
+          "DP-2,preferred,auto-up,1"
+        ];
         "$terminal" = "kitty";
 
         # environment variables
