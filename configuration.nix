@@ -135,9 +135,7 @@
     fprintd
     nemo
     filezilla
-    # Temp for project
-    dbeaver-bin
-    processing
+    psmisc   
   ];
 
   fonts.packages = with pkgs; [
