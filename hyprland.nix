@@ -112,6 +112,7 @@
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
         "$mainMod, R, exec, rofi -show drun -show-icons"
+        "$mainMod SHIFT, B, exec, ~/Nix/launch-waybar.sh"
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"

@@ -2,6 +2,6 @@
 # Startup script for waybar
 # Kills any current running instances, starts a new one
 
-killall waybar
+killall .waybar-wrapped
 
 waybar &
