@@ -119,6 +119,7 @@
     git
     gh
     helix
+    xsel
     home-manager
     obsidian
     vscode
