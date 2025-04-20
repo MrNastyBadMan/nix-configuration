@@ -8,6 +8,10 @@
         position = "top";
         height = 30;
 
+        modules-center = [
+          "hyprland/workspaces"
+        ];
+
         modules-right = [
           "pulseaudio"
           "network"
