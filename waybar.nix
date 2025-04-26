@@ -116,6 +116,16 @@
             "hibernate" = "systemctl hibernate";
           };
         };
+
+        "hyprland/workspaces" = {
+          "show-special" = true;
+          format = "{name}: {icon}";
+          "format-icons" = {
+            "special" = "*";
+            "active" = "X";
+            "default" = "O";
+          };
+        };
       };
     };
   };
