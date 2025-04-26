@@ -12,6 +12,7 @@
     '';
   in
 {
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
       exec-once = ''${startupScript}/bin/start'';
       monitor = [
