@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "main flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
  };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

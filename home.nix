@@ -1,9 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
     ./hyprland.nix
     ./waybar.nix
+    inputs.nix-colors.homeManagerModules.default
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
