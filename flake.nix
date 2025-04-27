@@ -25,7 +25,7 @@
     homeConfigurations = {
       "wrc" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {inherit inputs; };
         modules = [
           ./home.nix
         ];

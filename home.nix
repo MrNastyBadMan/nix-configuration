@@ -53,7 +53,8 @@
     # '')
   ];
 
-  #programs.kitty.enable = true;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium; #lib.schemeFromYaml "test-scheme" (builtins.readFile /home/wrc/.local/share/flavours/base16/schemes/generated/2d.yaml);
+
   programs.kitty = {
     enable = true;
     settings = {
