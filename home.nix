@@ -5,6 +5,7 @@
     ./hm-modules/hyprland.nix
     ./hm-modules/waybar.nix
     ./hm-modules/kitty.nix
+    ./hm-modules/helix.nix
     inputs.nix-colors.homeManagerModules.default
   ];
 
@@ -53,7 +54,7 @@
     # '')
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyodark;
 
   programs.hyprlock.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
