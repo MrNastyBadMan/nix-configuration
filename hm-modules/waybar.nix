@@ -8,20 +8,23 @@
         position = "top";
         height = 30;
 
+        modules-left = [
+          "memory"
+          "cpu"
+          "temperature"
+        ];
+
         modules-center = [
           "hyprland/workspaces"
         ];
 
         modules-right = [
-          "pulseaudio"
-          "network"
           "power-profiles-daemon"
-          "cpu"
-          "memory"
-          "temperature"
           "backlight"
+          "pulseaudio"
           "battery"
           "clock"
+          "network"
           "tray"
           "custom/power"
         ];
@@ -32,17 +35,17 @@
         };
 
         "cpu" = {
-          format = "{usage}% ";
-          "max-length" = 10;
+          format = " [ {icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} ]";
+          "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
         };
 
         "memory" = {
-          format = "{}% ";
+          format = "  {}%";
         };
 
         "temperature" = {
           "critical-threshold" = 80;
-          format = "{temperatureC}°C {icon}";
+          format = " {temperatureC}󰔄";
         };
 
         "backlight" = {
@@ -58,7 +61,7 @@
           interval = 10;
           format = "{capacity}% {icon}";
           "format-full" = "{capacity}% {icon}";
-          "format-charging" = "{capacity}% ";
+          "format-charging" = "{capacity}% ";
           "format-plugged" = "{capacity}% ";
           "format-alt" = "{time} {icon}";
           "format-icons" = ["" "" "" "" ""];
@@ -86,7 +89,7 @@
         };
 
         "pulseaudio" = {
-          format = "{volume}% {icon} {format_source}";
+          format = "{volume}% {icon}  {format_source}";
           "format-bluetooth" = "{volume}% {icon} {format_source}";
           "format-bluetooth-muted" = "󰝟 {icon} {format_source}";
           "format-muted" = "󰝟 {format_source}";
@@ -118,13 +121,12 @@
         };
 
         "hyprland/workspaces" = {
-          "show-special" = true;
-          format = "{name}: {icon}";
+          format = "{icon}";
           "format-icons" = {
-            "special" = "*";
-            "active" = "X";
-            "default" = "O";
+            "active" = "";
+            "default" = "";
           };
+          "persistent-workspaces" = { "*" = 4; };
         };
       };
     };

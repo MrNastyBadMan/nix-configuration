@@ -28,7 +28,7 @@
       general = {
         "gaps_in" = "2";
         "gaps_out" = "10";
-        "border_size" = "2";
+        "border_size" = "4";
         "col.active_border" = "rgb(${config.colorScheme.palette.base0B}) 45deg";
         "col.inactive_border" = "rgba(${config.colorScheme.palette.base01}aa)";
         "resize_on_border" = "false";
@@ -36,12 +36,12 @@
         "layout" = "dwindle";
       };
       decoration = {
-        "rounding" = "10";
-        "rounding_power" = "2";
+        "rounding" = "5";
+        "rounding_power" = "4";
         "active_opacity" = "1.0";
         "inactive_opacity" = "1.0";
         shadow = {
-          "enabled" = "true";
+          "enabled" = "false";
           "range" = "4";
           "render_power" = 3;
           "color" = "rgba(1a1a1aee)";
@@ -111,14 +111,18 @@
         "$mainMod, V, togglefloating"
         # ADD MENU THING
         "$mainMod, P, pseudo"
-        "$mainMod, J, togglesplit"
+        "$mainMod, B, togglesplit"
         "$mainMod, R, exec, rofi -show drun -show-icons"
-        "$mainMod SHIFT, B, exec, ~/Nix/launch-waybar.sh"
-        # Move focus with mainMod + arrow keys
+        "$mainMod SHIFT, B, exec, ~/Nix/hm-modules/launch-waybar.sh"
+        # Move focus with mainMod + arrow keys or vim/hx keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, J, movefocus, d"
         # Switch workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

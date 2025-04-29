@@ -119,7 +119,7 @@
     git
     gh
     helix
-    xsel
+    wl-clipboard
     home-manager
     obsidian
     vscode
