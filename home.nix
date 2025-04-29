@@ -54,7 +54,7 @@
     # '')
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.tokyodark;
+  colorScheme = inputs.nix-colors.colorSchemes.gigavolt;
 
   programs.hyprlock.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

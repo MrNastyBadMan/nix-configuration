@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = 0.75;
+      background_opacity = 0.9;
       confirm_os_window_close = 0;
 
       background = "#${config.colorScheme.palette.base00}";
