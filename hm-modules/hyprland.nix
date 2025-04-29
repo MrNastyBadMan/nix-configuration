@@ -26,11 +26,11 @@
         "HYPRCURSOR_SIZE,24"
       ];
       general = {
-        "gaps_in" = "5";
-        "gaps_out" = "20";
+        "gaps_in" = "2";
+        "gaps_out" = "10";
         "border_size" = "2";
         "col.active_border" = "rgb(${config.colorScheme.palette.base0B}) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.inactive_border" = "rgba(${config.colorScheme.palette.base01}aa)";
         "resize_on_border" = "false";
         "allow_tearing" = "true";
         "layout" = "dwindle";
