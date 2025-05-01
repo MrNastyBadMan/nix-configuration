@@ -124,6 +124,11 @@
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
         # Switch workspaces
+        "$mainMod SHIFT, l, workspace, +1"
+        "$mainMod SHIFT, h, workspace, -1"
+        "$mainMod SHIFT, right, workspace, +1"
+        "$mainMod SHIFT, left, workspace, -1"
+        
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"

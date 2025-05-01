@@ -1,14 +1,33 @@
 {config, pkgs, lib, ... }:
 
+let
+  base00 = config.colorScheme.palette.base00;
+  base01 = config.colorScheme.palette.base01;
+  base02 = config.colorScheme.palette.base02;
+  base03 = config.colorScheme.palette.base03;
+  base04 = config.colorScheme.palette.base04;
+  base05 = config.colorScheme.palette.base05;
+  base06 = config.colorScheme.palette.base06;
+  base07 = config.colorScheme.palette.base07;
+  base08 = config.colorScheme.palette.base08;
+  base09 = config.colorScheme.palette.base09;
+  base0A = config.colorScheme.palette.base0A;
+  base0B = config.colorScheme.palette.base0B;
+  base0C = config.colorScheme.palette.base0C;
+  base0D = config.colorScheme.palette.base0D;
+  base0E = config.colorScheme.palette.base0E;
+  base0F = config.colorScheme.palette.base0F;
+in 
 {
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         position = "top";
-        height = 30;
+        margin = "10";
 
         modules-left = [
+          "custom/nix"
           "memory"
           "cpu"
           "temperature"
@@ -29,6 +48,10 @@
           "custom/power"
         ];
 
+        "custom/nix" = {
+          "format" = " ";
+        };
+
         "clock" = {
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           "format-alt" = "{:%Y-%m-%d}";
@@ -45,12 +68,12 @@
 
         "temperature" = {
           "critical-threshold" = 80;
-          format = " {temperatureC}󰔄";
+          format = " {temperatureC}°C";
         };
 
         "backlight" = {
           format = "{percent}% {icon}";
-          "format-icons" = ["" "" "" "" "" "" "" "" ""];
+          "format-icons" = [" " " " " " " " " " " " " " " " " "];
         };
 
         "battery" = {
@@ -64,7 +87,7 @@
           "format-charging" = "{capacity}% ";
           "format-plugged" = "{capacity}% ";
           "format-alt" = "{time} {icon}";
-          "format-icons" = ["" "" "" "" ""];
+          "format-icons" = [" " " " " " " " " "];
         };
 
         "power-profiles-daemon" = {
@@ -72,18 +95,18 @@
           "tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
           tooltip = true;
           "format-icons" = {
-            default = "";
-            performance = "";
-            balanced = "";
-            "power-saver" = "";
+            default = " ";
+            performance = " ";
+            balanced = " ";
+            "power-saver" = " ";
           };
         };
 
         "network" = {
-          "format-wifi" = "{essid} ({signalStrength}%) ";
-          "format-ethernet" = "{ipaddr}/{cidr} ";
-          "tooltip-format" = "{ifname} via {gwaddr} ";
-          "format-linked" = "{ifname} (No IP) ";
+          "format-wifi" = "{essid} ({signalStrength}%)  ";
+          "format-ethernet" = "{ipaddr}/{cidr}  ";
+          "tooltip-format" = "{ifname} via {gwaddr}  ";
+          "format-linked" = "{ifname} (No IP)  ";
           "format-disconnected" = "Disconnected ⚠";
           "format-alt" = "{ifname}: {ipaddr}/{cidr}";
         };
@@ -94,15 +117,15 @@
           "format-bluetooth-muted" = "󰝟 {icon} {format_source}";
           "format-muted" = "󰝟 {format_source}";
           "format-source" = "{volume}% ";
-          "format-source-muted" = "";
+          "format-source-muted" = " ";
           "format-icons" = {
-            "headphone" = "";
-            "hands-free" = "";
-            "headset" = "";
-            "phone" = "";
-            "portable" = "";
-            "car" = "";
-            "default" = ["" "" ""];
+            "headphone" = " ";
+            "hands-free" = " ";
+            "headset" = " ";
+            "phone" = " ";
+            "portable" = " ";
+            "car" = " ";
+            "default" = [" " " " " "];
           };
           "on-click" = "pavucontrol";
         };
@@ -121,14 +144,38 @@
         };
 
         "hyprland/workspaces" = {
-          format = "{icon}";
-          "format-icons" = {
-            "active" = "";
-            "default" = "";
-          };
-          "persistent-workspaces" = { "*" = 4; };
+          format = "";
+          "persistent-workspaces" = { "*" = 5; };
         };
       };
     };
+
+   # style = ''
+   #   * {
+   #     font-family: FontAwsome, JetBrainsMono;
+   #     min-height: 0;
+   #   }
+
+   #   window#waybar {
+   #     background-color: rgba(43,48,59,0.5);
+   #     color: #ffffff;
+   #   }
+
+   #   #workspaces {
+   #     font-size: 0px;
+   #     border: 5px solid #${base05};
+   #     border-radius: 23px;
+   #   }
+
+   #   #workspaces button {
+   #     margin: 3px;
+   #     background-color: #${base02};
+   #     border-radius: 10px;
+   #   }
+
+   #   #workspaces button.active {
+   #     background-color: #${base03};
+   #   }
+   # '';
   };
 }

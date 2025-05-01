@@ -1,0 +1,28 @@
+
+    style = ''
+      * {
+        font-family: FontAwsome, JetBrainsMono;
+        min-height: 0;
+      }
+
+      window#waybar {
+        background-color: rgba(43,48,59,0.5);
+        color: #ffffff;
+      }
+
+      #workspaces {
+        font-size: 0px;
+        border: 5px solid #${base05};
+        border-radius: 23px;
+      }
+
+      #workspaces button {
+        margin: 3px;
+        background-color: #${base02};
+        border-radius: 10px;
+      }
+
+      #workspaces button.active {
+        background-color: #${base03};
+      }
+    '';
