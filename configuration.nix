@@ -128,8 +128,7 @@
     jdk
     python3
     sqlite
-    cargo
-    rustc
+    rustup
     gcc
     fprintd
     crispy-doom
