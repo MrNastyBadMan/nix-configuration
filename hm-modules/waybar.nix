@@ -49,7 +49,7 @@ in
         ];
 
         "custom/nix" = {
-          "format" = " ";
+          "format" = "";
         };
 
         "clock" = {
@@ -58,12 +58,14 @@ in
         };
 
         "cpu" = {
-          format = " [ {icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} ]";
-          "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          format = "cpu: {}%";
+          "max-length" = 10;
+          "interval" = 10;
         };
 
         "memory" = {
-          format = "  {}%";
+          format = "mem: {}%";
+          interval = 10;
         };
 
         "temperature" = {
@@ -95,10 +97,10 @@ in
           "tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
           tooltip = true;
           "format-icons" = {
-            default = " ";
-            performance = " ";
-            balanced = " ";
-            "power-saver" = " ";
+            default = "";
+            performance = "";
+            balanced = "";
+            "power-saver" = "";
           };
         };
 
@@ -108,7 +110,7 @@ in
           "tooltip-format" = "{ifname} via {gwaddr}  ";
           "format-linked" = "{ifname} (No IP)  ";
           "format-disconnected" = "Disconnected ⚠";
-          "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+         # "format-alt" = "{ifname}: {ipaddr}/{cidr}";
         };
 
         "pulseaudio" = {
@@ -117,21 +119,21 @@ in
           "format-bluetooth-muted" = "󰝟 {icon} {format_source}";
           "format-muted" = "󰝟 {format_source}";
           "format-source" = "{volume}% ";
-          "format-source-muted" = " ";
+          "format-source-muted" = "";
           "format-icons" = {
-            "headphone" = " ";
-            "hands-free" = " ";
-            "headset" = " ";
+            "headphone" = "";
+            "hands-free" = "";
+            "headset" = "";
             "phone" = " ";
             "portable" = " ";
             "car" = " ";
-            "default" = [" " " " " "];
+            "default" = ["" "" ""];
           };
           "on-click" = "pavucontrol";
         };
 
         "custom/power" = {
-          format = "⏻ ";
+          format = "⏻";
           tooltip = false;
           menu = "on-click";
           "menu-file" = "$HOME/.config/waybar/power_menu.xml";

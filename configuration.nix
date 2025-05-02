@@ -125,10 +125,12 @@
     vscode
     btop
     neofetch
-    rustup
     jdk
     python3
     sqlite
+    cargo
+    rustc
+    gcc
     fprintd
     crispy-doom
     nh
