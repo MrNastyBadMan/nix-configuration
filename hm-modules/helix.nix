@@ -5,7 +5,28 @@
     defaultEditor = true;
 
     settings = {
-      theme = "base16";
+      theme = "heisenberg";
+    };
+
+    languages = {
+      language = [{
+        name = "rust";
+        auto-format = false;
+      }];
+
+    language-server.rust-analyzer = {
+      command = "rust-analyzer";
+    };
+
+    language-server.rust-analyzer.config = {
+      inlayHints.bindingModeHints.enable = false;
+      inlayHints.closingBraceHints.minLines = 10;
+      inlayHints.closureReturnTypeHints.enable = "with_block";
+      inlayHints.discriminantHints.enable = "fieldless";
+      inlayHints.lifetimeElisionHints.enable = "skip_trivial";
+      inlayHints.typeHints.hideClosureInitialization = false;
+    };
+    
     };
 
     themes = {
