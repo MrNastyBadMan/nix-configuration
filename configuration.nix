@@ -137,7 +137,7 @@
     fprintd
     nemo
     filezilla
-    psmisc   
+    psmisc
   ];
 
   fonts.packages = with pkgs; [

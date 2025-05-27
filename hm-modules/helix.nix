@@ -5,7 +5,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "heisenberg";
+      theme = "gruvbox_dark_hard";
     };
 
     languages = {

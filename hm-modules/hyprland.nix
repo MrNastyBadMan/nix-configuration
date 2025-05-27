@@ -128,6 +128,8 @@
         "$mainMod SHIFT, h, workspace, -1"
         "$mainMod SHIFT, right, workspace, +1"
         "$mainMod SHIFT, left, workspace, -1"
+        # Lock screen
+        "$mainMod CTRL, L, exec, hyprlock"
         
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
