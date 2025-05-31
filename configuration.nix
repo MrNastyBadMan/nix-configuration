@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -159,6 +160,14 @@
   # Enable fprintd for fingerprint scanner
   services.fprintd.enable = true;
 
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "wrc" = import ./home.nix;
+    };
+  };
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -11,27 +11,17 @@
     nix-colors.url = "github:misterio77/nix-colors";
  };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, ... }@inputs:
+    let
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-      ];
-
-    };
-
-    homeConfigurations = {
-      "wrc" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs; };
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {  
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules = [
-          ./home.nix
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
         ];
       };
     };
-
-  };
-
 }
