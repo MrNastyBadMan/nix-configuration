@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./hm-modules/hyprland.nix
-    ./hm-modules/waybar.nix
-    ./hm-modules/kitty.nix
-    ./hm-modules/helix.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/helix.nix
     inputs.nix-colors.homeManagerModules.default
   ];
 
