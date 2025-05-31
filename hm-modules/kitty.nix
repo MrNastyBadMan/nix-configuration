@@ -5,7 +5,7 @@
     enable = true;
       settings = {
       background_opacity = 0.9;
-      confirm_os_window_close = 0;
+      confirm_os_window_close = 1;
       shell = "fish";
 
       background = "#${config.colorScheme.palette.base00}";
