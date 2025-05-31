@@ -102,6 +102,11 @@
     ];
   };
 
+  # Make default editor work please
+  environment.sessionVariables = {
+    EDITOR = "hx";
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -116,6 +121,7 @@
   environment.systemPackages = with pkgs; [
     #(uutils-coreutils.override {prefix = ""; })
     uutils-coreutils-noprefix
+    fish
     git
     gh
     helix

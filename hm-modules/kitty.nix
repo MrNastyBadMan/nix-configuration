@@ -3,9 +3,10 @@
 {
   programs.kitty = {
     enable = true;
-    settings = {
+      settings = {
       background_opacity = 0.9;
       confirm_os_window_close = 0;
+      shell = "fish";
 
       background = "#${config.colorScheme.palette.base00}";
       foreground = "#${config.colorScheme.palette.base05}";

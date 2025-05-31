@@ -159,6 +159,10 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
+      bindl = [
+        ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
+        ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1,preferred,auto,1\""
+      ];
       # Keybinds/shortcuts with mouse_down
       bindm = [
         "$mainMod, mouse:272, movewindow"

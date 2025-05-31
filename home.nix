@@ -41,6 +41,7 @@
     pkgs.hyprlock
     pkgs.slurp
     pkgs.grim
+    pkgs.yazi
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -55,6 +56,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  programs.helix.defaultEditor = true;
+
+  home.shell.enableFishIntegration = true;
 
   colorScheme = inputs.nix-colors.colorSchemes.gigavolt;
 
@@ -90,9 +95,9 @@
   #
   #  /etc/profiles/per-user/wrc/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "hx";
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
