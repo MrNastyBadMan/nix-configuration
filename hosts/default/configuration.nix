@@ -55,7 +55,6 @@
 
   # Enable Hyprland Desktop Environment
   programs.hyprland.enable = true;
-  #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -100,12 +99,6 @@
     EDITOR = "hx";
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Install steam
-  programs.steam.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -149,6 +142,8 @@
     jetbrains-mono
   ];
 
+  programs.steam.enable = true;
+
   # Enable fprintd for fingerprint scanner
   services.fprintd.enable = true;
 
@@ -158,6 +153,7 @@
     users = {
       "wrc" = import ./home.nix;
     };
+    useGlobalPkgs = true;
   };
   
   # Some programs need SUID wrappers, can be configured further or are
