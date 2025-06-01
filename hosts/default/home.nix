@@ -6,7 +6,6 @@
     ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/helix.nix
-    ../../modules/home-manager/fastfetch.nix
     inputs.nix-colors.homeManagerModules.default
   ];
 
@@ -62,7 +61,7 @@
 
   home.shell.enableFishIntegration = true;
 
-  colorScheme = inputs.nix-colors.colorSchemes.gigavolt;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   programs.hyprlock.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
