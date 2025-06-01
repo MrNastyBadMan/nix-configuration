@@ -53,10 +53,6 @@
     desktopManager.gnome.enable = true;
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-
   # Enable Hyprland Desktop Environment
   programs.hyprland.enable = true;
   #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -97,10 +93,6 @@
     isNormalUser = true;
     description = "Will";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   # Make default editor work please
