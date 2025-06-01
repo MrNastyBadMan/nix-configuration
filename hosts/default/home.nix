@@ -6,6 +6,7 @@
     ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/helix.nix
+    ../../modules/home-manager/fastfetch.nix
     inputs.nix-colors.homeManagerModules.default
   ];
 
