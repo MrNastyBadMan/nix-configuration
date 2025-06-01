@@ -112,7 +112,6 @@
     gh
     helix
     wl-clipboard
-    home-manager
     obsidian
     vscode
     btop
