@@ -115,7 +115,6 @@
     obsidian
     vscode
     btop
-    neofetch
     jdk
     python3
     sqlite
