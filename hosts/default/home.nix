@@ -62,7 +62,7 @@
 
   home.shell.enableFishIntegration = true;
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
   programs.hyprlock.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

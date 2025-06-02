@@ -27,17 +27,17 @@
       ];
       general = {
         "gaps_in" = "2";
-        "gaps_out" = "10";
-        "border_size" = "4";
-        "col.active_border" = "rgb(${config.colorScheme.palette.base0B}) 45deg";
+        "gaps_out" = "4";
+        "border_size" = "2";
+        "col.active_border" = "rgb(${config.colorScheme.palette.base07}) 45deg";
         "col.inactive_border" = "rgba(${config.colorScheme.palette.base01}aa)";
         "resize_on_border" = "false";
         "allow_tearing" = "true";
         "layout" = "dwindle";
       };
       decoration = {
-        "rounding" = "5";
-        "rounding_power" = "4";
+        "rounding" = "10";
+        "rounding_power" = "10";
         "active_opacity" = "1.0";
         "inactive_opacity" = "1.0";
         shadow = {

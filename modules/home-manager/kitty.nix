@@ -3,7 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-      settings = {
+    settings = {
       background_opacity = 0.9;
       confirm_os_window_close = 1;
       shell = "fish";
@@ -33,6 +33,8 @@
       color13 = "#${config.colorScheme.palette.base0E}";
       color14 = "#${config.colorScheme.palette.base0C}";
       color15 = "#${config.colorScheme.palette.base07}";
+
+      window_padding_width = 4;
     };
   };
 }
