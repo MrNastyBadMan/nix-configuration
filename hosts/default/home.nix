@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../modules/home-manager/hyprland.nix
-    ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/hyprland/mod.nix
+    #../../modules/home-manager/waybar.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/helix.nix
     ../../modules/home-manager/fastfetch.nix
@@ -42,6 +42,7 @@
     pkgs.slurp
     pkgs.grim
     pkgs.yazi
+    pkgs.nwg-displays
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

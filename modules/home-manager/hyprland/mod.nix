@@ -10,15 +10,22 @@
       ${pkgs.waybar}/bin/waybar &
       ${pkgs.dunst}/bin/dunst
     '';
+    launchWaybar = pkgs.pkgs.writeShellScriptBin "launch-waybar" ''
+      killall .waybar-wrapped
+      waybar &
+    '';
   in
 {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
       exec-once = ''${startupScript}/bin/start'';
+
+      # Monitors and Workspaces
       monitor = [
         "eDP-1,preferred,auto,1"
-        "DP-2,preferred,auto-up,1"
+        "DP-3, 2560x1440@120, auto, 1"
       ];
+      
       "$terminal" = "kitty";
       # environment variables
       env = [
@@ -113,7 +120,7 @@
         "$mainMod, P, pseudo"
         "$mainMod, B, togglesplit"
         "$mainMod, R, exec, rofi -show drun -show-icons"
-        "$mainMod SHIFT, B, exec, ~/Nix/hm-modules/launch-waybar.sh"
+        "$mainMod SHIFT, B, exec, ${launchWaybar}/bin/launch-waybar"
         # Move focus with mainMod + arrow keys or vim/hx keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
@@ -158,6 +165,7 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+        # Disable /s
       ];
       bindl = [
         ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""

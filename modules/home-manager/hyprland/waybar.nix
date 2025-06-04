@@ -147,7 +147,7 @@ in
 
         "hyprland/workspaces" = {
           format = "";
-          "persistent-workspaces" = { "*" = 5; };
+          "persistent-workspaces" = { "*" = 3; };
         };
       };
     };
