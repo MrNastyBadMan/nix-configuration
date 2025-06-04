@@ -3,7 +3,6 @@
 {
   imports = [
     ../../modules/home-manager/hyprland/mod.nix
-    #../../modules/home-manager/waybar.nix
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/helix.nix
     ../../modules/home-manager/fastfetch.nix

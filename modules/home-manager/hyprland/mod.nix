@@ -22,6 +22,11 @@
   in
 {
   wayland.windowManager.hyprland.enable = true;
+
+  imports = [
+    ./waybar.nix
+  ];
+
   wayland.windowManager.hyprland.settings = {
       exec-once = ''${startupScript}/bin/start'';
 

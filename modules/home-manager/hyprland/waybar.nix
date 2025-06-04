@@ -24,28 +24,27 @@ in
     settings = {
       mainBar = {
         position = "top";
-        margin = "10";
+        margin = "4";
 
         modules-left = [
-          "custom/nix"
-          "memory"
-          "cpu"
-          "temperature"
-        ];
-
-        modules-center = [
           "hyprland/workspaces"
         ];
 
+        modules-center = [
+          "clock"
+        ];
+
         modules-right = [
+          "tray"
+          "cpu"
+          "memory"
+          "temperature"
+          "battery"
           "power-profiles-daemon"
           "backlight"
           "pulseaudio"
-          "battery"
-          "clock"
           "network"
-          "tray"
-          "custom/power"
+          #"custom/power"
         ];
 
         "custom/nix" = {
@@ -53,29 +52,31 @@ in
         };
 
         "clock" = {
+          "format" = "{:%I:%M %p - %a, %d, %b, %Y}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = "{:%Y-%m-%d}";
         };
 
         "cpu" = {
-          format = "cpu: {}%";
+          format = "cpu: {usage}%";
           "max-length" = 10;
-          "interval" = 10;
+          "interval" = 5;
         };
 
         "memory" = {
-          format = "mem: {}%";
-          interval = 10;
+          format = "mem: {percentage}%";
+          max-length = 8;
+          interval = 5;
         };
 
         "temperature" = {
           "critical-threshold" = 80;
-          format = " {temperatureC}°C";
+          format = "{temperatureC}°C";
+          max-length = 4;
         };
 
         "backlight" = {
           format = "{percent}% {icon}";
-          "format-icons" = [" " " " " " " " " " " " " " " " " "];
+          "format-icons" = ["󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖"];
         };
 
         "battery" = {
@@ -88,7 +89,6 @@ in
           "format-full" = "{capacity}% {icon}";
           "format-charging" = "{capacity}% ";
           "format-plugged" = "{capacity}% ";
-          "format-alt" = "{time} {icon}";
           "format-icons" = [" " " " " " " " " "];
         };
 
@@ -97,27 +97,27 @@ in
           "tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
           tooltip = true;
           "format-icons" = {
-            default = "";
-            performance = "";
-            balanced = "";
-            "power-saver" = "";
+            default = " ";
+            performance = " ";
+            balanced = " ";
+            "power-saver" = " ";
           };
         };
 
         "network" = {
-          "format-wifi" = "{essid} ({signalStrength}%)  ";
+          "format-wifi" = "{signalStrength}%  ";
           "format-ethernet" = "{ipaddr}/{cidr}  ";
-          "tooltip-format" = "{ifname} via {gwaddr}  ";
+          "tooltip-format" = "Connected to {essid}";
           "format-linked" = "{ifname} (No IP)  ";
           "format-disconnected" = "Disconnected ⚠";
          # "format-alt" = "{ifname}: {ipaddr}/{cidr}";
         };
 
         "pulseaudio" = {
-          format = "{volume}% {icon}  {format_source}";
-          "format-bluetooth" = "{volume}% {icon} {format_source}";
-          "format-bluetooth-muted" = "󰝟 {icon} {format_source}";
-          "format-muted" = "󰝟 {format_source}";
+          format = "{volume}% {icon} ";
+          "format-bluetooth" = "{volume}% {icon} ";
+          "format-bluetooth-muted" = " {icon} ";
+          "format-muted" = "{volume}%  ";
           "format-source" = "{volume}% ";
           "format-source-muted" = "";
           "format-icons" = {
@@ -146,8 +146,8 @@ in
         };
 
         "hyprland/workspaces" = {
-          format = "";
-          "persistent-workspaces" = { "*" = 3; };
+          format = "{name}";
+          move-to-monitor = true;
         };
       };
     };
