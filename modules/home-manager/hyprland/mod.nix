@@ -10,9 +10,14 @@
       ${pkgs.waybar}/bin/waybar &
       ${pkgs.dunst}/bin/dunst
     '';
+
     launchWaybar = pkgs.pkgs.writeShellScriptBin "launch-waybar" ''
       killall .waybar-wrapped
       waybar &
+    '';
+
+    randomWallpaper = pkgs.pkgs.writeShellScriptBin "random-wallpaper" ''
+      swww img "$(find ~/Pictures/wallpapers/ -type f | shuf -n 1)"
     '';
   in
 {
@@ -43,20 +48,17 @@
         "layout" = "dwindle";
       };
       decoration = {
-        "rounding" = "10";
+        "rounding" = "0";
         "rounding_power" = "10";
         "active_opacity" = "1.0";
         "inactive_opacity" = "1.0";
         shadow = {
           "enabled" = "false";
-          "range" = "4";
-          "render_power" = 3;
-          "color" = "rgba(1a1a1aee)";
         };
         blur = {
           "enabled" = "true";
-          "size" = "3";
-          "passes" = "1";
+          "size" = "6";
+          "passes" = "2";
           "vibrancy" = "0.1696";
         };
       };
@@ -114,13 +116,12 @@
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive"
         "$mainMod, M, exit"
-        # ADD FILE MANAGER
         "$mainMod, V, togglefloating"
-        # ADD MENU THING
         "$mainMod, P, pseudo"
         "$mainMod, B, togglesplit"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod SHIFT, B, exec, ${launchWaybar}/bin/launch-waybar"
+        "$mainMod, W, exec, ${randomWallpaper}/bin/random-wallpaper"
         # Move focus with mainMod + arrow keys or vim/hx keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
