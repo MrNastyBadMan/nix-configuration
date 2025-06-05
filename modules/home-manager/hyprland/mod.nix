@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }:
 
@@ -9,11 +8,12 @@ let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.swww}/bin/swww-daemon &
     sleep 1
-    ${pkgs.swww}/bin/swww img ./wallpaper2.jpg &
+    ${randomWallpaper}/bin/random-wallpaper
 
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
     ${pkgs.waybar}/bin/waybar &
-    ${pkgs.dunst}/bin/dunst
+    ${pkgs.dunst}/bin/dunst &
+    ${pkgs.hypridle}/bin/hypridle
   '';
 
   launchWaybar = pkgs.pkgs.writeShellScriptBin "launch-waybar" ''
@@ -31,6 +31,7 @@ in
   imports = [
     ./waybar.nix
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
