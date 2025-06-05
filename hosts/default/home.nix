@@ -40,6 +40,8 @@
     pkgs.grim
     pkgs.yazi
     pkgs.nwg-displays
+    pkgs.zip
+    pkgs.unzip
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
