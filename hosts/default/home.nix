@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -42,6 +48,7 @@
     pkgs.nwg-displays
     pkgs.zip
     pkgs.unzip
+    pkgs.nil
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -56,7 +63,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
 
   programs.helix.defaultEditor = true;
 
