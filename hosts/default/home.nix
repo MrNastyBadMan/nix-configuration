@@ -31,13 +31,11 @@
     pkgs.fastfetch
     pkgs.kitty
     pkgs.swww
-    pkgs.waybar
     pkgs.rofi-wayland
     pkgs.dunst
     pkgs.libnotify
     pkgs.networkmanagerapplet
     pkgs.brightnessctl
-    pkgs.hyprlock
     pkgs.slurp
     pkgs.grim
     pkgs.yazi
@@ -64,7 +62,6 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
-  programs.hyprlock.enable = true;
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

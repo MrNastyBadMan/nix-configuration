@@ -1,5 +1,4 @@
-{config, pkgs, lib, ... }:
-
+{ config, pkgs, lib, ... }:
 let
   base00 = config.colorScheme.palette.base00;
   base01 = config.colorScheme.palette.base01;

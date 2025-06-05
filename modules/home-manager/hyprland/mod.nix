@@ -25,6 +25,7 @@
 
   imports = [
     ./waybar.nix
+    ./hyprlock.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
