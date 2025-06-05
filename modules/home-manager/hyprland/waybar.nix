@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   base00 = config.colorScheme.palette.base00;
   base01 = config.colorScheme.palette.base01;
@@ -16,7 +21,7 @@ let
   base0D = config.colorScheme.palette.base0D;
   base0E = config.colorScheme.palette.base0E;
   base0F = config.colorScheme.palette.base0F;
-in 
+in
 {
   programs.waybar = {
     enable = true;
@@ -75,7 +80,17 @@ in
 
         "backlight" = {
           format = "{percent}% {icon}";
-          "format-icons" = ["󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖"];
+          "format-icons" = [
+            "󱩎"
+            "󱩏"
+            "󱩐"
+            "󱩑"
+            "󱩒"
+            "󱩓"
+            "󱩔"
+            "󱩕"
+            "󱩖"
+          ];
         };
 
         "battery" = {
@@ -88,7 +103,13 @@ in
           "format-full" = "{capacity}% {icon}";
           "format-charging" = "{capacity}% ";
           "format-plugged" = "{capacity}% ";
-          "format-icons" = [" " " " " " " " " "];
+          "format-icons" = [
+            " "
+            " "
+            " "
+            " "
+            " "
+          ];
         };
 
         "power-profiles-daemon" = {
@@ -109,7 +130,7 @@ in
           "tooltip-format" = "Connected to {essid}";
           "format-linked" = "{ifname} (No IP)  ";
           "format-disconnected" = "Disconnected ⚠";
-         # "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+          # "format-alt" = "{ifname}: {ipaddr}/{cidr}";
         };
 
         "pulseaudio" = {
@@ -126,7 +147,11 @@ in
             "phone" = " ";
             "portable" = " ";
             "car" = " ";
-            "default" = ["" "" ""];
+            "default" = [
+              ""
+              ""
+              ""
+            ];
           };
           "on-click" = "pavucontrol";
         };
@@ -151,86 +176,86 @@ in
       };
     };
 
-  style = ''
-    * {
-        border: none;
-        border-radius: 0;
-        min-height: 0;
-        font-family: FontAwsome, JetBrainsMono;
-        font-weight: 500;
-        font-size: 14px;
-        padding: 0;
-    }
-    
-    window#waybar {
-        background: #${base00};
-        border: 2px solid #${base01};
-    }
-    
-    tooltip {
-        background-color: #${base00};
-        border: 2px solid #${base01};
-    }
-    
-    #clock,
-    #tray,
-    #cpu,
-    #memory,
-    #battery,
-    #network,
-    #pulseaudio,
-    #temperature,
-    #power-profiles-daemon,
-    #backlight {
-        margin: 6px 6px 6px 0px;
-        padding: 2px 8px;
-        background-color: #${base06};
-        border: 2px solid #${base04};
-        color: #${base01};
-    }
-    
-    #workspaces {
-        background-color: #${base01};
-        margin: 6px 0px 6px 6px;
-        border: 2px solid #${base02};
-    }
-    
-    #workspaces button {
-        all: initial;
-        min-width: 0;
-        box-shadow: inset 0 -3px transparent;
-        padding: 2px 4px;
-        color: #${base06};
-    }
-    
-    #workspaces button.active {
-        color: #${base01};
-        background-color: #${base0B};
-    }
-    
-    #workspaces button.urgent {
-        background-color: #${base09};
-        color: #${base01};
-    }
-    
-    #clock {
-        background-color: #${base01};
-        border: 2px solid #${base02};
-        color: #${base06};
-    }
-        
-    #cpu.critical,
-    #memory.critical {
-        background-color: #${base08};
-        color: #${base00};
-    }
-    
-    #battery.warning,
-    #battery.critical,
-    #battery.urgent {
-        background-color: #${base09};
-        color: #${base00};
-    }
-  '';
+    style = ''
+      * {
+          border: none;
+          border-radius: 0;
+          min-height: 0;
+          font-family: FontAwsome, JetBrainsMono;
+          font-weight: 500;
+          font-size: 14px;
+          padding: 0;
+      }
+
+      window#waybar {
+          background: #${base00};
+          border: 2px solid #${base01};
+      }
+
+      tooltip {
+          background-color: #${base00};
+          border: 2px solid #${base01};
+      }
+
+      #clock,
+      #tray,
+      #cpu,
+      #memory,
+      #battery,
+      #network,
+      #pulseaudio,
+      #temperature,
+      #power-profiles-daemon,
+      #backlight {
+          margin: 6px 6px 6px 0px;
+          padding: 2px 8px;
+          background-color: #${base06};
+          border: 2px solid #${base04};
+          color: #${base01};
+      }
+
+      #workspaces {
+          background-color: #${base01};
+          margin: 6px 0px 6px 6px;
+          border: 2px solid #${base02};
+      }
+
+      #workspaces button {
+          all: initial;
+          min-width: 0;
+          box-shadow: inset 0 -3px transparent;
+          padding: 2px 4px;
+          color: #${base06};
+      }
+
+      #workspaces button.active {
+          color: #${base01};
+          background-color: #${base0B};
+      }
+
+      #workspaces button.urgent {
+          background-color: #${base09};
+          color: #${base01};
+      }
+
+      #clock {
+          background-color: #${base01};
+          border: 2px solid #${base02};
+          color: #${base06};
+      }
+          
+      #cpu.critical,
+      #memory.critical {
+          background-color: #${base08};
+          color: #${base00};
+      }
+
+      #battery.warning,
+      #battery.critical,
+      #battery.urgent {
+          background-color: #${base09};
+          color: #${base00};
+      }
+    '';
   };
 }

@@ -6,7 +6,7 @@
         type = "auto";
         source = "/home/wrc/Pictures/crazy-cravings.jpg";
       };
-      modules = [      
+      modules = [
         "title"
         "separator"
         "os"
