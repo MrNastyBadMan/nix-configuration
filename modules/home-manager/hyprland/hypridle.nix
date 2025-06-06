@@ -15,7 +15,7 @@
           on-resume = "hyprctl dispatch dpms on DP-3 && brightnessctl -r";
         }
         {
-          timeout = 150;
+          timeout = 240;
           on-timeout = "loginctl lock-session";
         }
       ];

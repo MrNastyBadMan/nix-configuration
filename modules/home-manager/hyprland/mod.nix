@@ -32,6 +32,7 @@ in
     ./waybar.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./cursor.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
