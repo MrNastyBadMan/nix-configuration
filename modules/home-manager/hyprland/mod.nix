@@ -16,9 +16,12 @@ let
     ${pkgs.hypridle}/bin/hypridle
   '';
 
-  launchWaybar = pkgs.pkgs.writeShellScriptBin "launch-waybar" ''
-    killall .waybar-wrapped
-    waybar &
+  toggleWaybar = pkgs.pkgs.writeShellScriptBin "toggle-bar" ''
+    if pgrep waybar; then
+      `killall .waybar-wrapped`
+    else
+      `${pkgs.waybar}/bin/waybar`
+    fi
   '';
 
   randomWallpaper = pkgs.pkgs.writeShellScriptBin "random-wallpaper" ''
@@ -133,7 +136,7 @@ in
       "$mainMod, P, pseudo"
       "$mainMod, B, togglesplit"
       "$mainMod, R, exec, rofi -show drun -show-icons"
-      "$mainMod SHIFT, B, exec, ${launchWaybar}/bin/launch-waybar"
+      "$mainMod SHIFT, B, exec, ${toggleWaybar}/bin/toggle-bar"
       "$mainMod, W, exec, ${randomWallpaper}/bin/random-wallpaper"
       # Move focus with mainMod + arrow keys or vim/hx keys
       "$mainMod, left, movefocus, l"
