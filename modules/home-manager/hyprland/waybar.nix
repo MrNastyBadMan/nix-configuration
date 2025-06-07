@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, ... }:
 let
   base00 = config.colorScheme.palette.base00;
   base01 = config.colorScheme.palette.base01;
@@ -43,11 +38,11 @@ in
           "cpu"
           "memory"
           "temperature"
-          "battery"
           "power-profiles-daemon"
           "backlight"
           "pulseaudio"
           "network"
+          "battery"
           #"custom/power"
         ];
 

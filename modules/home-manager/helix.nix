@@ -134,12 +134,6 @@
             modifiers = [ "crossed_out" ];
           };
 
-          # dumb fucking shit doesnt work
-          #        "diagnostic.hint" = { underline.style = "curl"; };
-          #        "diagnostic.info" = { underline.style = "curl"; };
-          #        "diagnostic.warning" = { underline.style = "curl"; };
-          #        "diagnostic.warning" = { underline.style = "curl"; };
-
           "ui.background" = {
             bg = base00;
           };
