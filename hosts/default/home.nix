@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   inputs,
   ...
 }:
@@ -65,8 +63,16 @@
   ];
 
   programs.helix.defaultEditor = true;
-
+  programs.fish.enable = true;
+  programs.fish.shellInitLast = ''
+    starship init fish | source
+  '';
   home.shell.enableFishIntegration = true;
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
