@@ -3,5 +3,8 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
+    settings = {
+      add_newline = false;
+    };
   };
 }
