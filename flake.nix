@@ -12,17 +12,30 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
     {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/default/configuration.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        "wrc" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/default/home.nix
           ];
         };
       };

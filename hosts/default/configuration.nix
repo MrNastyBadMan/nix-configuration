@@ -2,13 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -151,15 +150,6 @@
 
   # Enable fprintd for fingerprint scanner
   services.fprintd.enable = true;
-
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "wrc" = import ./home.nix;
-    };
-    useGlobalPkgs = true;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
