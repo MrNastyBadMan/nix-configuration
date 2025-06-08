@@ -64,9 +64,9 @@
 
   programs.helix.defaultEditor = true;
   programs.fish.enable = true;
-  programs.fish.shellInitLast = ''
-    starship init fish | source
-  '';
+  # programs.fish.shellInitLast = ''
+  #   starship init fish | source
+  # '';
   home.shell.enableFishIntegration = true;
   programs.starship = {
     enable = true;
