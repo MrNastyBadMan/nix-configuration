@@ -10,6 +10,8 @@
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/helix.nix
     ../../modules/home-manager/fastfetch.nix
+    ../../modules/home-manager/fish.nix
+    ../../modules/home-manager/starship.nix
     inputs.nix-colors.homeManagerModules.default
   ];
 
@@ -63,16 +65,6 @@
   ];
 
   programs.helix.defaultEditor = true;
-  programs.fish.enable = true;
-  # programs.fish.shellInitLast = ''
-  #   starship init fish | source
-  # '';
-  home.shell.enableFishIntegration = true;
-  programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
