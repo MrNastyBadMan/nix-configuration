@@ -138,6 +138,9 @@ in
       "$mainMod, R, exec, rofi -show drun -show-icons"
       "$mainMod SHIFT, B, exec, ${toggleWaybar}/bin/toggle-bar"
       "$mainMod, W, exec, ${randomWallpaper}/bin/random-wallpaper"
+      "$mainMod, T, exec, $terminal"
+      ", Print, exec, grim -g \"$(slurp)\""
+      # $(xdg-user-dir PICTURES/$(date +'%s.png')
       # Move focus with mainMod + arrow keys or vim/hx keys
       "$mainMod, left, movefocus, l"
       "$mainMod, right, movefocus, r"
