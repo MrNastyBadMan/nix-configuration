@@ -10,7 +10,7 @@
 
       listener = [
         {
-          timeout = 60;
+          timeout = 120;
           on-timeout = "hyprctl dispatch dpms off DP-3";
           on-resume = "hyprctl dispatch dpms on DP-3 && brightnessctl -r";
         }
