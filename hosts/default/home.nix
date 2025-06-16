@@ -64,6 +64,14 @@
     # '')
   ];
 
+  # For hotplugging usb drives
+  services.udiskie = {
+    enable = true;
+    settings = {
+      program_options.file_manager = "${pkgs.yazi}/bin/yazi";
+    };
+  };
+
   programs.helix.defaultEditor = true;
 
   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;

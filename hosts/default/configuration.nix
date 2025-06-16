@@ -134,7 +134,11 @@
     nemo
     filezilla
     psmisc
+    usbutils
+    udisks
   ];
+
+  services.udisks2.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts
