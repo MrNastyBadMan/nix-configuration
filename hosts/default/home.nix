@@ -64,6 +64,11 @@
     # '')
   ];
 
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # For hotplugging usb drives
   services.udiskie = {
     enable = true;
