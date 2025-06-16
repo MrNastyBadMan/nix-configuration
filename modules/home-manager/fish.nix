@@ -12,6 +12,7 @@
       nhhs = "nh home switch .";
 
       # git
+      gs = "git status";
       ga = "git add";
       gcm = "git commit -m";
       gp = "git push";
