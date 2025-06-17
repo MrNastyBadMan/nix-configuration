@@ -178,7 +178,7 @@ in
           min-height: 0;
           font-family: FontAwsome, JetBrainsMono;
           font-weight: 500;
-          font-size: 14px;
+          font-size: 15px;
           padding: 0;
       }
 
