@@ -184,7 +184,9 @@ in
 
       window#waybar {
           background: #${base00};
-          border: 2px solid #${base01};
+          border-width: 2px 2px 0 2px;
+          border-style: solid;
+          border-color: #${base01};
       }
 
       tooltip {
