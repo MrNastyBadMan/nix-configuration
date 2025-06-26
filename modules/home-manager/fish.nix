@@ -14,6 +14,7 @@
       # git
       gs = "git status";
       ga = "git add";
+      gaa = "git add -A";
       gcm = "git commit -m";
       gp = "git push";
     };
