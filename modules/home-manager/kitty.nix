@@ -4,6 +4,7 @@
   programs.kitty = {
     enable = true;
     settings = {
+      font_size = 13.0;
       background_opacity = 0.7;
       background_blur = 20;
       confirm_os_window_close = 1;
