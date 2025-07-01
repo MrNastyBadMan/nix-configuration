@@ -47,8 +47,11 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # Enable Hyprland Desktop Environment
+  programs.hyprland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver.enable = true;
+  services.xserver.desktopManager.cinnamon.enable = true;
 
   # Allow dynamically linked binaries to work
   programs.nix-ld.enable = true;
@@ -59,9 +62,6 @@
   ];
 
   hardware.graphics.enable = true;
-
-  # Enable Hyprland Desktop Environment
-  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
