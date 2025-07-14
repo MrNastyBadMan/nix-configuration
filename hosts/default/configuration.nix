@@ -48,10 +48,12 @@
   };
 
   # Enable Hyprland Desktop Environment
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+  services.desktopManager.plasma6.enable = true;
   programs.hyprland.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.xserver.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
 
   # Allow dynamically linked binaries to work
   programs.nix-ld.enable = true;
