@@ -53,7 +53,6 @@
     wayland.enable = true;
   };
   services.desktopManager.plasma6.enable = true;
-  services.desktopManager.cosmic.enable = true;
   programs.hyprland.enable = true;
 
   # Allow dynamically linked binaries to work
@@ -140,6 +139,7 @@
     psmisc
     usbutils
     udisks
+    gphoto2
   ];
 
   services.udisks2.enable = true;
