@@ -52,7 +52,6 @@
     enable = true;
     wayland.enable = true;
   };
-  services.desktopManager.plasma6.enable = true;
   programs.hyprland.enable = true;
 
   # Allow dynamically linked binaries to work
