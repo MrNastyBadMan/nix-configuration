@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
@@ -16,6 +17,7 @@
       self,
       nixpkgs,
       home-manager,
+      catppuccin,
       ...
     }@inputs:
     {
@@ -26,6 +28,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/default/configuration.nix
+            catppuccin.nixosModules.catppuccin
           ];
         };
       };
@@ -36,6 +39,7 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [
             ./hosts/default/home.nix
+            catppuccin.homeModules.catppuccin
           ];
         };
       };
