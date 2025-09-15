@@ -29,6 +29,15 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  catppuccin = {
+    flavor = "mocha";
+    accent = "yellow";
+    firefox.enable = true;
+    firefox.force = true;
+  };
+
+  programs.firefox.enable = true;
+
   programs.bash.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
@@ -39,7 +48,7 @@
     pkgs.fastfetch
     pkgs.kitty
     pkgs.swww
-    pkgs.rofi-wayland
+    pkgs.rofi
     pkgs.dunst
     pkgs.libnotify
     pkgs.networkmanagerapplet
