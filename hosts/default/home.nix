@@ -34,6 +34,11 @@
     accent = "yellow";
     firefox.enable = true;
     firefox.force = true;
+    gtk.icon = {
+      enable = true;
+      flavor = "mocha";
+      accent = "blue";
+    };
   };
 
   programs.firefox.enable = true;

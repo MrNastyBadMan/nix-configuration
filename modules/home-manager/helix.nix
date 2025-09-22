@@ -30,11 +30,6 @@
           character = "|";
           render = true;
         };
-
-        lsp = {
-          auto-signature-help = false;
-          display-messages = true;
-        };
       };
     };
 
