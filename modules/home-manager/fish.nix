@@ -18,5 +18,8 @@
       gcm = "git commit -m";
       gp = "git push";
     };
+    shellAliases = {
+      "Nix" = "cd ~/Nix";
+    };
   };
 }
