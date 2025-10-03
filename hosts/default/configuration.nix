@@ -139,6 +139,7 @@
     usbutils
     udisks
     gphoto2
+    typst
   ];
 
   services.udisks2.enable = true;

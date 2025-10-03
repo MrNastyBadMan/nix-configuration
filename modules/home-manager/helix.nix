@@ -44,7 +44,23 @@
           auto-format = true;
           formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
         }
+        {
+          name = "typst";
+          language-servers = [ "tinymist" ];
+        }
       ];
+
+      language-server.tinymist = {
+        command = "tinymist";
+        config.preview.background = {
+          enabled = true;
+          args = [
+            "--data-plane-host=127.0.0.1:23635"
+            "--invert-colors=never"
+            "--open"
+          ];
+        };
+      };
 
       language-server.rust-analyzer = {
         command = "rust-analyzer";
