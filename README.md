@@ -12,3 +12,5 @@ nh os switch . -H default
 - `-H default` - specifying the host
 
 nh home switch .
+
+nh clean all -k(eep) <num generations>
