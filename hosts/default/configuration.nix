@@ -140,6 +140,8 @@
     udisks
     gphoto2
     typst
+    hunspell
+    hunspellDicts.en_GB-ise
   ];
 
   services.udisks2.enable = true;
