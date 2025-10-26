@@ -92,6 +92,9 @@
     pulse.enable = true;
   };
 
+  # Allows for updating BIOS or smth
+  services.fwupd.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wrc = {
     isNormalUser = true;
@@ -142,7 +145,6 @@
     typst
     hunspell
     hunspellDicts.en_GB-ise
-    fwupd
   ];
 
   services.udisks2.enable = true;
