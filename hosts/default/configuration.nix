@@ -142,6 +142,7 @@
     typst
     hunspell
     hunspellDicts.en_GB-ise
+    fwupd
   ];
 
   services.udisks2.enable = true;
