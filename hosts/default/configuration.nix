@@ -95,6 +95,9 @@
   # Allows for updating BIOS or smth
   services.fwupd.enable = true;
 
+  # Self explanitory
+  services.power-profiles-daemon.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wrc = {
     isNormalUser = true;
