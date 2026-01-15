@@ -41,7 +41,11 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   programs.firefox.enable = true;
+
+  programs.vscode.enable = true;
 
   programs.bash.enable = true;
 

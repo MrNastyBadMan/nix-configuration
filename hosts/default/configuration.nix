@@ -127,7 +127,6 @@
     helix
     wl-clipboard
     obsidian
-    vscode
     btop
     jdk
     python3
@@ -163,6 +162,7 @@
   ];
 
   programs.steam.enable = true;
+  programs.vscode.enable = true;
 
   # Enable fprintd for fingerprint scanner
   services.fprintd.enable = true;

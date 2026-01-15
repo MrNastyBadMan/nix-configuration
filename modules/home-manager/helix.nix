@@ -48,6 +48,9 @@
           name = "typst";
           language-servers = [ "tinymist" ];
         }
+        {
+          name = "haskell";
+        }
       ];
 
       language-server.tinymist = {
@@ -64,15 +67,14 @@
 
       language-server.rust-analyzer = {
         command = "rust-analyzer";
-      };
-
-      language-server.rust-analyzer.config = {
-        inlayHints.bindingModeHints.enable = false;
-        inlayHints.closingBraceHints.minLines = 10;
-        inlayHints.closureReturnTypeHints.enable = "with_block";
-        inlayHints.discriminantHints.enable = "fieldless";
-        inlayHints.lifetimeElisionHints.enable = "skip_trivial";
-        inlayHints.typeHints.hideClosureInitialization = false;
+        config = {
+          inlayHints.bindingModeHints.enable = false;
+          inlayHints.closingBraceHints.minLines = 10;
+          inlayHints.closureReturnTypeHints.enable = "with_block";
+          inlayHints.discriminantHints.enable = "fieldless";
+          inlayHints.lifetimeElisionHints.enable = "skip_trivial";
+          inlayHints.typeHints.hideClosureInitialization = false;
+        };
       };
     };
   };
