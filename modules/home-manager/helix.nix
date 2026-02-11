@@ -16,7 +16,6 @@
       editor = {
         bufferline = "multiple";
         cursorline = true;
-        line-number = "relative";
         rulers = [ 120 ];
         true-color = true;
 
@@ -50,6 +49,13 @@
         }
         {
           name = "haskell";
+        }
+        {
+          name = "c";
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
         }
       ];
 

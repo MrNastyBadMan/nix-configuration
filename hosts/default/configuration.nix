@@ -147,6 +147,8 @@
     typst
     hunspell
     hunspellDicts.en_GB-ise
+    clang
+    libclang
   ];
 
   services.udisks2.enable = true;
