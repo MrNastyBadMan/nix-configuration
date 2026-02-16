@@ -39,7 +39,7 @@ in
   ];
 
   wayland.windowManager.hyprland.settings = {
-    exec-once = ''${startupScript}/bin/start'';
+    exec-once = "${startupScript}/bin/start";
 
     # Monitors and Workspaces
     monitor = [
@@ -206,9 +206,10 @@ in
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
     ];
-    windowrulev2 = [
-      "suppressevent maximize, class:.*"
-      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-    ];
+    # windowrulev2 was depricated
+    # windowrulev2 = [
+    #   "suppressevent maximize, class:.*"
+    #   "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+    # ];
   };
 }
