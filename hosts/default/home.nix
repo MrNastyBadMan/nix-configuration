@@ -90,6 +90,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    shellWrapperName = "y";
   };
 
   # For hotplugging usb drives

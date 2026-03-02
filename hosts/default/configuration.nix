@@ -59,7 +59,7 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
-    xorg.libX11
+    libx11
   ];
 
   hardware.graphics.enable = true;
@@ -136,7 +136,6 @@
     fprintd
     crispy-doom
     nh
-    libreoffice
     fprintd
     nemo
     filezilla
