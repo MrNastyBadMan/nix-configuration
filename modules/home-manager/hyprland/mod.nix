@@ -6,7 +6,7 @@
 
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.swww}/bin/swww-daemon &
+    ${pkgs.awww}/bin/awww-daemon &
     sleep 1
     ${randomWallpaper}/bin/random-wallpaper
 
@@ -25,7 +25,7 @@ let
   '';
 
   randomWallpaper = pkgs.pkgs.writeShellScriptBin "random-wallpaper" ''
-    swww img "$(find ~/Pictures/wallpapers/ -type f | shuf -n 1)"
+    awww img "$(find ~/Pictures/wallpapers/ -type f | shuf -n 1)"
   '';
 in
 {

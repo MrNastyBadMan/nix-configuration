@@ -56,7 +56,7 @@
     pkgs.firefox
     pkgs.fastfetch
     pkgs.kitty
-    pkgs.swww
+    pkgs.awww
     pkgs.rofi
     pkgs.dunst
     pkgs.libnotify
