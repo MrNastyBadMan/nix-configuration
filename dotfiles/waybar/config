@@ -1,0 +1,133 @@
+[
+  {
+    "backlight": {
+      "format": "{percent}% {icon}",
+      "format-icons": [
+        "󱩎",
+        "󱩏",
+        "󱩐",
+        "󱩑",
+        "󱩒",
+        "󱩓",
+        "󱩔",
+        "󱩕",
+        "󱩖"
+      ]
+    },
+    "battery": {
+      "format": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-full": "{capacity}% {icon}",
+      "format-icons": [
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ],
+      "format-plugged": "{capacity}% ",
+      "interval": 10,
+      "states": {
+        "critical": 15,
+        "warning": 30
+      }
+    },
+    "clock": {
+      "format": "{:%I:%M %p - %a, %d, %b, %Y}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+      "format": "{usage}%  ",
+      "interval": 5,
+      "max-length": 10
+    },
+    "custom/nix": {
+      "format": ""
+    },
+    "custom/power": {
+      "format": "⏻",
+      "menu": "on-click",
+      "menu-actions": {
+        "hibernate": "systemctl hibernate",
+        "reboot": "reboot",
+        "shutdown": "shutdown",
+        "suspend": "systemctl suspend"
+      },
+      "menu-file": "$HOME/.config/waybar/power_menu.xml",
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "move-to-monitor": true
+    },
+    "margin": "4",
+    "memory": {
+      "format": "{percentage}%  ",
+      "interval": 5,
+      "max-length": 8
+    },
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "tray",
+      "cpu",
+      "memory",
+      "temperature",
+      "power-profiles-daemon",
+      "backlight",
+      "pulseaudio",
+      "network",
+      "battery"
+    ],
+    "network": {
+      "format-disconnected": "Disconnected ⚠",
+      "format-ethernet": "{ipaddr}/{cidr}  ",
+      "format-linked": "{ifname} (No IP)  ",
+      "format-wifi": "{signalStrength}%  ",
+      "tooltip-format": "Connected to {essid}"
+    },
+    "position": "top",
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "format-icons": {
+        "balanced": " ",
+        "default": " ",
+        "performance": " ",
+        "power-saver": " "
+      },
+      "tooltip": true,
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}"
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon} ",
+      "format-bluetooth": "{volume}% {icon} ",
+      "format-bluetooth-muted": " {icon} ",
+      "format-icons": {
+        "car": " ",
+        "default": [
+          "",
+          "",
+          ""
+        ],
+        "hands-free": "",
+        "headphone": "",
+        "headset": "",
+        "phone": " ",
+        "portable": " "
+      },
+      "format-muted": "{volume}%  ",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "on-click": "pavucontrol"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C ",
+      "max-length": 6
+    }
+  }
+]

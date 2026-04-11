@@ -32,7 +32,6 @@ in
   wayland.windowManager.hyprland.enable = true;
 
   imports = [
-    ./waybar.nix
     ./hyprlock.nix
     ./hypridle.nix
     ./cursor.nix
