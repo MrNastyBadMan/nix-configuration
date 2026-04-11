@@ -8,7 +8,6 @@
   imports = [
     ../../modules/home-manager/hyprland/mod.nix
     ../../modules/home-manager/kitty.nix
-    ../../modules/home-manager/helix.nix
     ../../modules/home-manager/fastfetch.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/starship.nix
@@ -111,6 +110,10 @@
   home.file = {
     ".config/waybar" = {
       source = ../../dotfiles/waybar;
+      recursive = true;
+    };
+    ".config/helix" = {
+      source = ../../dotfiles/helix;
       recursive = true;
     };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

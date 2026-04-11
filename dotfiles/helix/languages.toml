@@ -1,0 +1,52 @@
+[[language]]
+auto-format = false
+name = "rust"
+
+[[language]]
+auto-format = true
+name = "nix"
+
+[language.formatter]
+command = "/nix/store/m8r6kk7rancjxh4p3hrqwdh0g19yk3hl-nixfmt-1.2.0/bin/nixfmt"
+
+[[language]]
+language-servers = ["tinymist"]
+name = "typst"
+
+[[language]]
+name = "haskell"
+
+[[language]]
+name = "c"
+
+[language.indent]
+tab-width = 4
+unit = "    "
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config.inlayHints.bindingModeHints]
+enable = false
+
+[language-server.rust-analyzer.config.inlayHints.closingBraceHints]
+minLines = 10
+
+[language-server.rust-analyzer.config.inlayHints.closureReturnTypeHints]
+enable = "with_block"
+
+[language-server.rust-analyzer.config.inlayHints.discriminantHints]
+enable = "fieldless"
+
+[language-server.rust-analyzer.config.inlayHints.lifetimeElisionHints]
+enable = "skip_trivial"
+
+[language-server.rust-analyzer.config.inlayHints.typeHints]
+hideClosureInitialization = false
+
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.tinymist.config.preview.background]
+args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--open"]
+enabled = true

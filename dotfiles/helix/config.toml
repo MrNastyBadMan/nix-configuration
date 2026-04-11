@@ -1,0 +1,17 @@
+theme = "catppuccin_mocha"
+
+[editor]
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+rulers = [120]
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "|"
+render = true
