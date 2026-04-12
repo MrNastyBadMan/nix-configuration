@@ -2,8 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
-
+{ pkgs, inputs, ... }:
+let
+  # Hopefully will fix random fucking crashes when opening laptop
+  pkgs-for-hyprland-fix =
+    inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -62,7 +66,12 @@
     libx11
   ];
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    package = pkgs-for-hyprland-fix.mesa;
+    enable32Bit = true;
+    package32 = pkgs-for-hyprland-fix.pkgsi686Linux.mesa;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
