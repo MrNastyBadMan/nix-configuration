@@ -52,11 +52,9 @@ in
   };
 
   # Enable Hyprland Desktop Environment
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.ly.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = false;
 
   # Allow dynamically linked binaries to work
   programs.nix-ld.enable = true;

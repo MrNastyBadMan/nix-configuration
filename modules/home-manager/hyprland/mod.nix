@@ -30,6 +30,7 @@ let
 in
 {
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.systemd.enable = false;
 
   imports = [
     ./hyprlock.nix
@@ -106,7 +107,6 @@ in
       ];
     };
     dwindle = {
-      pseudotile = "true";
       "preserve_split" = "true";
     };
     master = {
@@ -133,7 +133,6 @@ in
       "$mainMod, M, exit"
       "$mainMod, V, togglefloating"
       "$mainMod, P, pseudo"
-      "$mainMod, B, togglesplit"
       "$mainMod, R, exec, rofi -show drun -show-icons"
       "$mainMod SHIFT, B, exec, ${toggleWaybar}/bin/toggle-bar"
       "$mainMod, W, exec, ${randomWallpaper}/bin/random-wallpaper"
