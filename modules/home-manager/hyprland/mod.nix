@@ -29,8 +29,11 @@ let
   '';
 in
 {
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = false;
+    configType = "hyprlang";
+  };
 
   imports = [
     ./hyprlock.nix
