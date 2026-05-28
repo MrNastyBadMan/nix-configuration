@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }:
 
@@ -28,6 +29,8 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  xdg.enable = true;
+
   catppuccin = {
     flavor = "mocha";
     accent = "yellow";
@@ -43,7 +46,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
-
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
   programs.vscode.enable = true;
 
   programs.bash.enable = true;
