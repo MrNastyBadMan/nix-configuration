@@ -32,6 +32,8 @@
   xdg.enable = true;
 
   catppuccin = {
+    autoEnable = false;
+    enable = true;
     flavor = "mocha";
     accent = "yellow";
     firefox.enable = true;
