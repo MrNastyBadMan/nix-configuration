@@ -19,9 +19,9 @@ name = "haskell"
 [[language]]
 name = "c"
 
-[language.indent]
-tab-width = 4
-unit = "    "
+[[language]]
+name = "java"
+indent = { tab-width = 4, unit = "    " }
 
 [language-server.rust-analyzer]
 command = "rust-analyzer"
