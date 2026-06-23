@@ -6,7 +6,7 @@
 
       background = [
         {
-          path = "~/Pictures/wallpapers/bore-hole-wales.JPG";
+          path = "~/Pictures/wallpapers/rainforest-sabah.jpg";
         }
       ];
     };
