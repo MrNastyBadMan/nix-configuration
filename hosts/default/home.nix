@@ -57,7 +57,6 @@
   # environment.
   home.packages = [
     pkgs.hello
-    pkgs.firefox
     pkgs.fastfetch
     pkgs.kitty
     pkgs.awww
