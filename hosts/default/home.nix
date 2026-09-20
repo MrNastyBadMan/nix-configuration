@@ -77,7 +77,7 @@
     pkgs.tmux
     pkgs.nasm
     pkgs.rust-analyzer
-    pkgs.anki
+    pkgs.remnote
     pkgs.waybar
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
