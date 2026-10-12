@@ -134,7 +134,6 @@ in
     helix
     wl-clipboard
     obsidian
-    btop
     jdk
     python3
     sqlite

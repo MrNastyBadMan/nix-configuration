@@ -100,6 +100,8 @@
     shellWrapperName = "y";
   };
 
+  programs.btop.enable = true;
+
   # For hotplugging usb drives
   services.udiskie = {
     enable = true;
