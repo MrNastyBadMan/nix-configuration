@@ -78,7 +78,6 @@
     pkgs.nasm
     pkgs.rust-analyzer
     pkgs.remnote
-    pkgs.waybar
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -117,10 +116,6 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/waybar" = {
-      source = ../../dotfiles/waybar;
-      recursive = true;
-    };
     ".config/helix" = {
       source = ../../dotfiles/helix;
       recursive = true;

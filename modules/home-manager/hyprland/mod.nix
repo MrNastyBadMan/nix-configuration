@@ -35,6 +35,8 @@ in
     configType = "lua";
   };
 
+  programs.noctalia.enable = true;
+
   imports = [
     ./hyprlock.nix
     ./hypridle.nix
