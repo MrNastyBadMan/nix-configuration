@@ -60,8 +60,6 @@
     pkgs.fastfetch
     pkgs.kitty
     pkgs.awww
-    pkgs.rofi
-    pkgs.dunst
     pkgs.libnotify
     pkgs.networkmanagerapplet
     pkgs.brightnessctl
